@@ -8,7 +8,7 @@
         <form @submit.prevent="enterChat">
           <label for="name">Enter your name:</label>
 
-          <input type="text" name="name" v-model="name">
+          <input autocomplete="off" type="text" name="name" v-model="name">
 
           <p class="red-text" v-if="feedback">{{feedback}}</p>
 
@@ -47,9 +47,15 @@ export default {
 </script>
 
 <style >
+
+.card {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 .welcome {
-  max-width: 400px;
-  margin-top: 100px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .welcome h2 {
@@ -58,5 +64,10 @@ export default {
 
 .welcome buttoin {
   margin: 30px auto;
+}
+
+
+@media only screen and (max-width: 700px) {
+
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div class="chat">
     <h2 class="center teal-text">Vue-Chat</h2>
-    <div class="card">
+    <div class="card" id="card">
       <div class="card-content">
         <ul class="messages" v-chat-scroll>
-          <li v-for="message in messages" :key="message.id" >
+          <li class="single-message" v-for="message in messages" :key="message.id" >
             <span class="teal-text">
              {{message.name}}
             </span>
@@ -66,9 +66,18 @@ export default {
 </script>
 
 <style >
+
+.chat {
+  width: 100%;
+  margin: 0px;
+  margin: 0px;
+  height: 100vh;
+}
 .chat h2 {
   font-size: 20px;
-  margin-bottom: 40px;
+  line-height: 10vh;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .chat span {
@@ -80,14 +89,27 @@ export default {
   font-size: 12px;
 }
 
-.messages{
-    max-height: 300px;
-    overflow: auto;
+#card {
+  height: 90%;
 }
 
+.messages{
+    overflow: auto;
+    max-height: 90%;
+}
+
+.card-content {
+      height: 80%;
+      overflow: auto;
+}
+.card-action {
+  height: 10vh;
+}
 .messages::-webkit-scrollbar {
     width: 3px;
 }
+
+
 
 .messages::-webkit-scrollbar-track {
     background: #ddd;
@@ -96,4 +118,26 @@ export default {
 .messages::-webkit-scrollbar-thumb {
     background: #aaa;
 }
+
+
+@media only screen and (max-width: 700px) {
+  .chat span{
+    font-size: 14x;
+  }
+
+  .messages::-webkit-scrollbar {
+    display: none;
+}
+
+  .chat .time {
+  display: block;
+  font-size: 8px;
+  }
+
+  .single-message {
+    padding: 10px;
+    padding-right: 5px;
+  }
+}
+
 </style>

@@ -2,7 +2,7 @@
 <div class="new-message">
     <form @submit.prevent="sendMessage">
         <label for="new-message">New Message (enter to send)</label>
-        <input type="text" name="new-message" v-model="newMessage">
+        <input autocomplete="off" type="text" name="new-message" v-model="newMessage">
         <p class="red-text" v-if="feedback">{{feedback}}</p>
     </form>
 </div>
@@ -41,3 +41,10 @@ export default {
   }
 };
 </script>
+
+<style>
+    .new-message {
+        height: 10vh;
+        margin: 0px;
+    }
+</style>

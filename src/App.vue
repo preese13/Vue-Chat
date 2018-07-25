@@ -11,5 +11,12 @@ export default {
 </script>
 
 <style>
-
+#app {
+  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh;
+  width: 100vw;
+  padding: 0px;
+}
 </style>
